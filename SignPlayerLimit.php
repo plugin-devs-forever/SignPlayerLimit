@@ -28,8 +28,13 @@ $this->api = $api
 }
 
 public function init(){
-
-
+ $this->api->event("player.block.touch", array($this, "eventHandler");
+ $this->api->event("tile.update", array($this, "eventHandler");
+ $this->config = new Config($this->api->plugin->configPath($this). "Config.yml" , CONFIG_YAML, array(
+        AllowPlayersToBuildSPLSigns => false
+        AllowPlayersToDestroySPLsigns => true
+       
+);
 
 }
 public function __destruct(){
