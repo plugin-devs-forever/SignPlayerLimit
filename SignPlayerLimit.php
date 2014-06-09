@@ -56,7 +56,7 @@ public function eventHandler(&$data, $event){
                                 $output .= "world" . $world . "is not found";
                                 return $output
                             }
-                            if(count($players) < $this->CONFIG["playersallowed"]){
+                            if(count($players) < $this->Config["playersallowed"]){
                              $data->data['Text3'] = "[you can join]";
                             }
                             else{
