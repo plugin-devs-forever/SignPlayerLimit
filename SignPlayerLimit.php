@@ -34,7 +34,7 @@ public function init(){
         AllowPlayersToBuildSPLSigns => false
         AllowPlayersToDestroySPLsigns => true
        
-);
+));
 
 }
 
@@ -46,23 +46,19 @@ public function eventHandler(&$data, $event){
                 if ($data->class === TILE_SIGN) {
                     $usrname = $data->data['created'];
                     if ($data->data['Text1'] == "[SignPlayerLimit]"){
-                            $mapname = $data->data['Text2'];
-                           if ($this->api->level->loadLevel($mapname) === false) {
+                            $world = $data->data['Text2'];
+                           if ($this->api->level->loadLevel($world) === false) {
                                 $data->data['Text1'] = "[NOT FOUND]";
-                                $this->api->chat->sendTo(false, "[SignPlayerLimit] World $mapname not found!", $usrname);
-                                return false;
+                                
+                                return " world $world not founf"
                             }
                             return true;
                         }
                     }
             break;
-             case "player.block.touch":
-                 $item = $data['item']->getID();          
-                     If ($item === 323) break;
-                            $this->api->tile->get(new Position ($data["target"], false, false, $data["target"]->level));
+            
                             
-             If (($sign instanceof tile) and $sign->class === TILE_SIGN and $data['type'] !== "touch"){
-                $Line1 = $sign->data['Text1'];
-                $Line2 = $sign->data['Text2'];
-                $Line3 = $sign->data['Text3'];
-                $Line4 = $sign->data['Text4'];
+                            
+                            
+                            
+             
