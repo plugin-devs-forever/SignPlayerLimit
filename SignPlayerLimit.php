@@ -50,8 +50,8 @@ public function eventHandler(&$data, $event){
                            if ($this->api->level->loadLevel($world) === false) {
                                 $data->data['Text1'] = "[NOT FOUND]";
                                 
-                                $output .= "world $world is not found";
-                                return 
+                                $output .= "world" . $world . "is not found";
+                                return $output
                             }
                             return true;
                         }
