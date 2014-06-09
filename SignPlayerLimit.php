@@ -56,9 +56,13 @@ public function eventHandler(&$data, $event){
                         }
                     }
             break;
-            
+             case "player.block.touch":
+                 $item = $data['item']->getID();          
+                     If ($item === 323) break;
+                            $this->api->tile->get(new Position ($data["target"], false, false, $data["target"]->level));
                             
-                            
-                            
-                            
-             
+             If (($sign instanceof tile) and $sign->class === TILE_SIGN and $data['type'] !== "touch"){
+                $Line1 = $sign->data['Text1'];
+                $Line2 = $sign->data['Text2'];
+                $Line3 = $sign->data['Text3'];
+                $Line4 = $sign->data['Text4'];
