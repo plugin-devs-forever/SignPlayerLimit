@@ -37,8 +37,28 @@ public function init(){
 );
 
 }
-public function __destruct(){
 
-}
+public function __destruct(){}
 
-}
+public function eventHandler(&$data, $event){
+        switch ($event) {
+            case "tile.update":
+                if ($data->class === TILE_SIGN) {
+                    $usrname = $data->data['created'];
+                    if ($data->data['Text1'] == "[SignPlayerLimit]"){
+                            $mapname = $data->data['Text2'];
+                           if ($this->api->level->loadLevel($mapname) === false) {
+                                $data->data['Text1'] = "[NOT FOUND]";
+                                $this->api->chat->sendTo(false, "[SignPlayerLimit] World $mapname not found!", $usrname);
+                                return false;
+                            }
+                            return true;
+                        }
+                    }
+            break;
+            
+                            
+                            
+                            
+                            
+             
