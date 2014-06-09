@@ -30,36 +30,39 @@ $this->api = $api
 public function init(){
  $this->api->event("player.block.touch", array($this, "eventHandler");
  $this->api->event("tile.update", array($this, "eventHandler");
- $this->config = new Config($this->api->plugin->configPath($this). "Config.yml" , CONFIG_YAML, array(
+ if(!file_exists($this->api->plugin->configPath($this) . "Config.yml")){
+ $this->Config = new Config($this->api->plugin->configPath($this). "Config.yml" , CONFIG_YAML, array(
         AllowPlayersToBuildSPLSigns => false
         AllowPlayersToDestroySPLsigns => true
+        playersallowed => 10
        
 ));
-
 }
-
+$this->Confog = $this->api->plugin->readYAML($this->api->plugin->configPath($this) . "Config.yml");
+}
 public function __destruct(){}
 
 public function eventHandler(&$data, $event){
         switch ($event) {
             case "tile.update":
                 if ($data->class === TILE_SIGN) {
-                    $usrname = $data->data['created'];
+                    $usrname = $data->data['created'];}
                     if ($data->data['Text1'] == "[SignPlayerLimit]"){
                             $world = $data->data['Text2'];
+                    }
                            if ($this->api->level->loadLevel($world) === false) {
                                 $data->data['Text1'] = "[NOT FOUND]";
                                 
                                 $output .= "world" . $world . "is not found";
                                 return $output
                             }
-                            return true;
-                        }
+                            if(count($players) < $this->CONFIG["playersallowed"]){
+                             $data->data['Text3'] = "[you can join]";
+                            }
+                            else{
+                              $data->data['Text3'] = "[it's full]";
+                            }
                     }
-            break;
-            
-                            
-                            
-                            
-                            
-             
+}
+public function __destruct(){}
+}
