@@ -2,26 +2,25 @@
 
 /*
 __Pocketmine Plugin__
+class=Limit
 Name=Sign Player Limit
 Description=Sets a limit on how many players can be on a world through a sign
-Version=1.1
 Author=Plugin-Devs-Forever Team
-class=Limit
+Version=1.1
 apiversion=12
 */
 
-/*
-Remove Dev when Plugin Development is complete.
-xxxxxxxxxxxxxxxx
-CHANGELOG
-xxxxxxxxxxxxxxxx
-1.0 
-Dev Init start of Development
 
-1.1
-Init release of SPL
-xxxxxxxxxxxxxxxx
-*/
+//Remove Dev when Plugin Development is complete.
+//xxxxxxxxxxxxxxxx
+//CHANGELOG
+//xxxxxxxxxxxxxxxx
+//1.0 
+//Dev Init start of Development
+
+//1.1
+//Init release of SPL
+//xxxxxxxxxxxxxxxx
 
 class Limit implements plugin{
 Private $api;
