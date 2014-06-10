@@ -29,5 +29,7 @@ Installation
 Configuration
 
 AllowPlayersToBuildSPL => false
+
 AllowPlayersToDestroySPL => true (Recommend false)
+
 Allowplayers => 10
