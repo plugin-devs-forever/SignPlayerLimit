@@ -17,3 +17,11 @@ Ex
 
 Requirements:you must put the Correct World name Between the Brackets or it won't work
 
+
+Installation
+
+1: Download Plugin
+
+2: Drop plugin into /plugins folder
+
+3: Restart server and Configure the the Config.yml to your needs
