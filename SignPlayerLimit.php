@@ -72,6 +72,11 @@ public function eventHandler(&$data, $event){
                             else{
                               $data->data['Text3'] = "[it's full]";
                             }
+                            
+                            
+                            
+                            
+                            
                     }
 }
 public function __destruct(){}
