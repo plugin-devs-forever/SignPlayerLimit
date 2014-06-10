@@ -106,7 +106,7 @@ public function eventHandler(&$data, $event){
                     
                     
 }
-
-
+ public function __destruct(){}
+ 
 
 }
