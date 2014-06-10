@@ -28,8 +28,9 @@ $this->api = $api
 }
 
 public function init(){
- $this->api->event("player.block.touch", array($this, "eventHandler");
- $this->api->event("tile.update", array($this, "eventHandler");
+$this->api->console->register("SPL", "Gives Inatructions on SignPlayerLimit", array($this, "send"));
+ $this->api->event("player.block.touch", array($this, "eventHandler"));
+ $this->api->event("tile.update", array($this, "eventHandler"));
  if(!file_exists($this->api->plugin->configPath($this) . "Config.yml")){
  $this->Config = new Config($this->api->plugin->configPath($this). "Config.yml" , CONFIG_YAML, array(
         AllowPlayersToBuildSPLSigns => false
@@ -38,9 +39,15 @@ public function init(){
        
 ));
 }
-$this->Confog = $this->api->plugin->readYAML($this->api->plugin->configPath($this) . "Config.yml");
+$this->Config = $this->api->plugin->readYAML($this->api->plugin->configPath($this) . "Config.yml");
 }
 public function __destruct(){}
+
+public function send($cmds, $args, $issuer){
+$username = $issuer->username
+$this->api->chat->sendto(false, "Check the forums to see Instructions", $username);
+}
+
 
 public function eventHandler(&$data, $event){
         switch ($event) {
