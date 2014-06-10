@@ -4,7 +4,7 @@
 __Pocketmine Plugin__
 Name=Sign Player Limit
 Description=Sets a limit on how many players can be on a world through a sign
-Version=1.0 Dev
+Version=1.1
 Author=Plugin-Devs-Forever Team
 Class=Limit
 apiversion=12
@@ -15,7 +15,11 @@ Remove Dev when Plugin Development is complete.
 xxxxxxxxxxxxxxxx
 CHANGELOG
 xxxxxxxxxxxxxxxx
-1.0 Dev Init start of Development
+1.0 
+Dev Init start of Development
+
+1.1
+Init release of SPL
 xxxxxxxxxxxxxxxx
 */
 
@@ -41,7 +45,6 @@ $this->api->console->register("SPL", "Gives Inatructions on SignPlayerLimit", ar
 }
 $this->Config = $this->api->plugin->readYAML($this->api->plugin->configPath($this) . "Config.yml");
 }
-public function __destruct(){}
 
 public function send($cmds, $args, $issuer){
 $username = $issuer->username
