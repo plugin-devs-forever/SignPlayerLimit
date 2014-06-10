@@ -25,3 +25,9 @@ Installation
 2: Drop plugin into /plugins folder
 
 3: Restart server and Configure the the Config.yml to your needs
+
+Configuration
+
+AllowPlayersToBuildSPL => false
+AllowPlayersToDestroySPL => true (Recommend false)
+Allowplayers => 10
